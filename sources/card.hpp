@@ -1,14 +1,12 @@
+#pragma once
 namespace ariel
 {
 
-
 class Card 
 {
-    Card (){}; //default constructor
+    int card;
+    Card (){} //default constructor
 }; 
-
-
-
 
 
 }

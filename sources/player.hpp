@@ -1,30 +1,22 @@
+#pragma once
 #include <string>
-
+using namespace std;
+namespace ariel
+{
 
 class Player
 {
+    
+    std::string playerName; //private by default
+    
     public:
-    string playerName;
-
-    Player (){}; //default constructor
+    Player(){} //default constructor
     
-    Player (string name)  //constructor of Player class
-    {
-       playerName = name;
-    }
+    Player(std::string name){} //constructor of Player class
     
-    int stacksize () // returns the amount of cards left
-    {
-        return 1;
-    }
-   
-    int cardesTaken () // returns the amount of cards this player has won
-    {
-        return 1;
-    }
+    int stacksize(){return 1;} //returns the amount of cards left
 
+    int cardesTaken(){return 1;} //returns the amount of cards this player has won
 };
 
-
-
-
+}
