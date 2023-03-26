@@ -113,21 +113,30 @@ TEST_CASE ("each game is maximum 26 rounds")
     Game game (p1, p2); //create new game
     bool max26turns = true;
 
+    game.playAll();
+    CHECK_THROWS(game.playTurn()); //After max 26 rounds, it is not possible to play another turn
+}
 
-for (int i = 0; i < 26; i++) //play 26 rounds
+TEST_CASE ("An attempt to put the same player into one game")
 {
-    game.playTurn();
+    Player p2 ("Bob");
+    Game game (p2, p2); //Create new game with the same player
+    CHECK_THROWS(game.playTurn()); //Should throw exception
 }
-game.playTurn(); //27'th round
-max26turns = false;
-CHECK (max26turns); //suppose to return false because we can't lay more than 26 rounds
 
-
-
-
-
-
+TEST_CASE ("befor calling game.playTurn method")
+{
+    Player p1 ("Alice");
+    Player p2 ("Bob");
+    Game game (p1, p2); //create new game
+    CHECK_THROWS(game.printLastTurn());
+    CHECK_THROWS(game.printWiner());
 }
+
+
+
+
+
 
 
 
