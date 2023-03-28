@@ -3,26 +3,24 @@
 
 namespace ariel
 {
+    class Game
+    {
+        Player player1; //private by default
+        Player player2; //private by default
 
-class Game
-{
-    Player p1; //private by default
-    Player p2; //private by default
+        public:
+        Game (Player player1, Player player2); //constructor of Game class
+    
+        void playTurn();
+    
+        void printLastTurn ();
 
-    public:
-    Game (Player p1, Player p2) {}; //constructor of Game class
+        void playAll(); //playes the game untill the end
     
-    void playTurn(){}
-    
-    void printLastTurn (){}
-
-    void playAll(){} //playes the game untill the end
-    
-    void printWiner(){} // prints the name of the winning player
+        void printWiner(); // rints the name of the winning player
    
-    void printLog(){}  // prints all the turns played one line per turn
+        void printLog(); //prints all the turns played one line per turn
 
-    void printStats(){} // for each player prints basic statistics: win rate, cards won, <other stats you want to print>. Also print the draw rate and amount of draws that happand. (draw within a draw counts as 2 draws. )
-};
-
+        void printStats(); //for each player prints basic statistics: win rate, cards won, <other stats you want to print>. Also print the draw rate and amount of draws that happand. (draw within a draw counts as 2 draws. )
+    };
 }
